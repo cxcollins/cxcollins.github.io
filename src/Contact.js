@@ -11,6 +11,7 @@ export default function Contact() {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
+    const [emailed, setEmailed] = useState(false)
 
     const handleChange = ( {target: t}) => {
         if(t.id === 'name') {
@@ -45,6 +46,7 @@ export default function Contact() {
         setEmail('')
         setPhone('')
         setMessage('')
+        setEmailed(true)
       }
 
     return (
@@ -61,6 +63,7 @@ export default function Contact() {
                         <label htmlFor='message'>Message: </label>
                         <textarea id='message' value={message} name='message' onChange={handleChange} placeholder='required' required></textarea>
                     <button type='submit'>Submit</button>
+                    {emailed && <p>Thanks for reaching out! I will be in touch with you shortly.</p>}
                 </form>
             </div>
         </div>
