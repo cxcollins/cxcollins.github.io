@@ -1,0 +1,65 @@
+.Projects-page-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: rgba(218, 218, 218, 0.378);
+    overflow-y: auto;
+    min-height: 95vh;
+    margin: auto;
+}
+
+.Projects-container {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.Thesis-container, .Scraper-container {
+    flex-basis: 40%;
+    margin: auto;
+}
+
+iframe {
+    width: 349px;
+    height: 280px;
+}
+.Rest-page {
+    margin: auto;
+    padding: 30px;
+    width: 85%
+}
+
+img {
+    width: 250px;
+    height: 350px;
+}
+
+.Projects-container h2 {
+    font-size: 1.2em;
+}
+
+.Projects-h2 {
+    margin: 0px 0px 15px 0px;
+    padding: 25px;
+    font-size: 50px;
+    font-weight: 500;
+    background-color: rgb(173, 173, 173);
+}
+
+.animation {
+    animation: fall-down 2s;
+}
+
+@keyframes fall-down {
+    from {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

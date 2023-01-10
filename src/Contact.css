@@ -1,0 +1,54 @@
+.Page-container {
+    height: 95vh;
+    display: flex;
+    background-color: rgba(218, 218, 218, 0.378);
+    width: 80%;
+    margin: auto;
+}
+
+.Contact-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgb(60, 59, 59);
+}
+
+.Contact-h1 {
+    font-weight: 500;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-family: 'Helvetica';
+}
+
+label {
+    text-align: left;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.animation {
+    animation: fall-down 2s;
+}
+
+@keyframes fall-down {
+    from {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
