@@ -23,6 +23,10 @@ export default function Home() {
                     knowledge of large scale data manipulation using tools like Python and SQL, as well as side
                     projects in Javascript like this website. For more in depth information, please visit the 
                     Projects or Resume page.
+                    <br /> <br />
+                    Please note that as Github hosts this website as a static site, typing in URL extensions such
+                    as cxcollins.github.io/contact will result in a 404 error. I am currently looking at other 
+                    options that might better suit the site.
                 </p>
             </div>
         </div>
