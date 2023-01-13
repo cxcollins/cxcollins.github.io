@@ -25,8 +25,8 @@ export default function Home() {
                     Projects or Resume page.
                     <br /> <br />
                     Please note that as Github hosts this website as a static site, typing in URL extensions such
-                    as cxcollins.github.io/contact will result in a 404 error. I am currently looking at other 
-                    options that might better suit the site. 
+                    as cxcollins.github.io/contact will result in a 404 error (meaning you won't be able to refresh
+                    outside of home). I am currently looking at other options that might better suit the site. 
                 </p>
             </div>
         </div>
