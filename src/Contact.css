@@ -34,6 +34,8 @@ label {
 input, textarea {
     margin-bottom: 10px;
     font-family: inherit;
+    border-style: inset;
+    border-width: 1px;
 }
 
 .animation {

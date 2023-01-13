@@ -1,4 +1,3 @@
-import thesis from './thesis.pdf'
 import './Projects.css'
 import football from './football.png'
 import thesis_ss from './thesis_ss.png'

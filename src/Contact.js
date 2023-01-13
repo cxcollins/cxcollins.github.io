@@ -1,5 +1,5 @@
 import './Contact.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'//'https://cdn.skypack.dev/react'
 import { sendForm } from '@emailjs/browser'
 
 export default function Contact() {
