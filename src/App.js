@@ -4,7 +4,7 @@ import Home from './Home'
 import Contact from './Contact'
 import Resume from './Resume'
 import Projects from './Projects'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { MemoryRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
