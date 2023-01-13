@@ -26,7 +26,7 @@ export default function Home() {
                     <br /> <br />
                     Please note that as Github hosts this website as a static site, typing in URL extensions such
                     as cxcollins.github.io/contact will result in a 404 error. I am currently looking at other 
-                    options that might better suit the site.
+                    options that might better suit the site. 
                 </p>
             </div>
         </div>
