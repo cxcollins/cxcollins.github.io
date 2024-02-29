@@ -15,14 +15,18 @@ export default function Home() {
             <div className='Home-div' id='Home-div'>
                 <p className='Home-about'>
                 <br />
-                    Thanks for visiting my website. I grew up on the East Coast, moved out West to study at Santa
-                    Clara University, and currently live in San Francisco. While at school, I studied Finance and
-                    Management Information Systems, and have developed a passion for learning new technologies. 
-                    Currently, I am a Technology Risk Associate at KPMG, specializing in data engineering and IT 
-                    compliance. Over the past few years, I have engaged in work that has given me extensive
-                    knowledge of large scale data manipulation using tools like Python and SQL, as well as side
-                    projects in Javascript like this website. For more in depth information, please visit the 
-                    Projects or Resume page.
+                    Thanks for visiting my website! 
+                    
+                    I am a technology consultant at KPMG, specializing in large scale data engineering and IT 
+                    compliance. Over the past few years, I have engaged in professional and educational work that 
+                    has given me extensive knowledge of tools like Python and SQL, building data pipelines and 
+                    machine learning algorithms.
+
+                    I have a BSc in Finance from Santa Clara, and am also currently earning a BS in Computer
+                    Science from Oregon State University. I expect to finish my CS degree by December of 2025.
+
+                    For more in depth information about my skills and experience, please visit the Projects or Resume 
+                    page of this site.
                 </p>
             </div>
         </div>
