@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.ed0ba949.css",
-    "main.js": "/static/js/main.3bbc7efd.js",
+    "main.js": "/static/js/main.26490471.js",
     "static/media/self_pic.png": "/static/media/self_pic.1fc45662fab9c78e23f6.png",
     "static/media/thesis_ss.png": "/static/media/thesis_ss.43e7caf2a22873ca7080.png",
     "static/media/resume.pdf": "/static/media/resume.443342fd35fbc2210c09.pdf",
     "static/media/football.png": "/static/media/football.4f545831283a681f1d95.png",
     "index.html": "/index.html",
     "main.ed0ba949.css.map": "/static/css/main.ed0ba949.css.map",
-    "main.3bbc7efd.js.map": "/static/js/main.3bbc7efd.js.map"
+    "main.26490471.js.map": "/static/js/main.26490471.js.map"
   },
   "entrypoints": [
     "static/css/main.ed0ba949.css",
-    "static/js/main.3bbc7efd.js"
+    "static/js/main.26490471.js"
   ]
 }
