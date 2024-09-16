@@ -39,22 +39,29 @@
 }
 
 .dropdown-items {
-    /* display: none; */
     position: absolute;
     list-style-type: none;
-    /* top: 50%; */
     z-index: 1;
     width: 100%;
     background-color: black;
-    text-align: left;
+    text-align: center;
     padding: 0px;
     margin: 0px;
+    display: none;
 }
 
 .dropdown li a {
     color: white;
     margin: auto;
+}
 
+.dropdown li {
+    padding: 5px 0px;
+}
+
+.dropdown li:first-child {
+    padding-top: 15px;
+    padding-bottom: 0px;
 }
 
 .dropdown:hover .dropdown-items {
