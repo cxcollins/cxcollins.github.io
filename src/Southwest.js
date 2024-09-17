@@ -33,6 +33,9 @@ export default function Southwest() {
             setTicketClass(t.value)
         }
     }
+
+    // Need to add submit event
+    // Need to create mongo backend
     return (
         <div className='Page-container'>
             <h1 className='Southwest-h1'>Southwest Price Change Alert</h1>
