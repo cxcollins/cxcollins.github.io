@@ -4,6 +4,7 @@ import Home from './Home'
 import Contact from './Contact'
 import Resume from './Resume'
 import Projects from './Projects'
+import Southwest from './Southwest'
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/resume' element={<Resume />}></Route>
           <Route path='/projects' element={<Projects />}></Route>
+          <Route path='flight-checker' element={<Southwest />}></Route>
         </Routes>
     </Router>
   </div>

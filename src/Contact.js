@@ -51,8 +51,8 @@ export default function Contact() {
 
     return (
         <div className='Page-container'>
+            <h1 className='Contact-h1'>Contact me!</h1>
             <div className='Contact-container' id='Contact-container'>
-                <h1 className='Contact-h1'>Contact me!</h1>
                 <form id='form' onSubmit={sendEmail} className='Form'>
                         <label htmlFor='name'>Name: </label>
                         <input id='name' placeholder='required' type='text' value={name} name='name' onChange={handleChange} required></input>

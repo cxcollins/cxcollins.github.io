@@ -12,7 +12,7 @@ export default function NavBar() {
                         <Link to='/projects'>Projects</Link>
                         <ul className='dropdown-items'>
                             <li>
-                                <Link to='flight-checker'>Southwest Flight Price Checker</Link>
+                                <Link to='/flight-checker'>Southwest Flight Price Checker</Link>
                             </li>
                             <li>
                                 <Link to='/projects'>Other projects</Link>
