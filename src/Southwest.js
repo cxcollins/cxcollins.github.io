@@ -9,6 +9,16 @@ export default function Southwest() {
     const [departureAirport, setDepartureAirport] = useState('')
     const [arrivalAirport, setArrivalAirport] = useState('')
     const [ticketClass, setTicketClass] = useState('wga')
+    const [returnDepartureTime, setReturnDepartureTime] = useState('')
+    const [returnDepartureMeridiem, setReturnDepartureMeridiem] = useState('')
+    const [returnArrivalTime, setReturnArrivalTime] = useState('')
+    const [returnArrivalTimeMeridiem, setReturnArrivalTimeMeridiem] = useState('')
+    const [returnTicketClass, setReturnTicketClass] = useState('wga')
+    const [roundtrip, setRoundtrip] = useState('oneway')
+
+    const handleRadioChange = (e) => {
+        setRoundtrip(e.target.value)
+    }
 
     const handleChange = ( {target: t} ) => {
         if(t.id === 'departureTime') {
@@ -31,6 +41,21 @@ export default function Southwest() {
         }
         if(t.id === 'ticketClass') {
             setTicketClass(t.value)
+        }
+        if(t.id === 'returnDepartureTime') {
+            setReturnDepartureTime(t.value)
+        }
+        if(t.id === 'returnDepartureMeridiem') {
+            setReturnDepartureMeridiem(t.value)
+        }
+        if(t.id === 'returnArrivalTime') {
+            setReturnArrivalTime(t.value)
+        }
+        if(t.id === 'returnArrivalTimeMeridiem') {
+            setReturnArrivalTimeMeridiem(t.value)
+        }
+        if(t.id === 'returnTicketClass') {
+            setReturnTicketClass(t.value)
         }
     }
 
@@ -63,7 +88,38 @@ export default function Southwest() {
                         <option value='wgap'>Wanna get away plus</option>
                         <option value='wga' default>Wanna get away</option>
                     </select>
+                    <fieldset>
+                        <legend>
+                            Roundtrip?
+                        </legend>
+                    <label htmlFor='roundtrip'>Roundtrip
+                        <input type='radio' id='roundtrip' name='roundtrip' value='roundtrip' checked={roundtrip === 'roundtrip'} onChange={handleRadioChange} />
+                    </label>
+                    <label htmlFor='oneway'>Oneway
+                        <input type='radio' id='oneway' name='roundtrip' value='oneway' checked={roundtrip === 'oneway'} onChange={handleRadioChange}/>
+                    </label>
                     <button type='submit'>Submit</button>
+                    </fieldset>
+
+                    {roundtrip === 'roundtrip' && (<fieldset id='roundtripDetails'>
+                        <legend>Return flight details</legend>
+
+                        <label htmlFor='returnDepartureTime'>Departure time: </label>
+                        <input id='returnDepartureTime' placeholder='HH:MM' type='text' value={returnDepartureTime} onChange={handleChange} required></input>
+                        <label htmlFor='returnDepartureMeridiem'>AM/PM: </label>
+                        <input id='returnDepartureMeridiem' placeholder='AM or PM' type='text' value={returnDepartureMeridiem} onChange={handleChange} required></input>
+                        <label htmlFor='returnArrivalTime'>Arrival time: </label>
+                        <input id='returnArrivalTime' placeholder='HH:MM' type='text' value={returnArrivalTime} onChange={handleChange} required></input>
+                        <label htmlFor='returnArrivalTimeMeridiem'>AM/PM: </label>
+                        <input id='returnArrivalTimeMeridiem' placeholder='HH:MM' type='text' value={returnArrivalTimeMeridiem} onChange={handleChange} required></input>
+                        <label htmlFor='ticketClass'>Ticket class: </label>
+                        <select id='returnTicketClass' value={returnTicketClass} onChange={handleChange} required>
+                            <option value='bs'>Business select</option>
+                            <option value='anytime'>Anytime</option>
+                            <option value='wgap'>Wanna get away plus</option>
+                            <option value='wga' default>Wanna get away</option>
+                        </select>
+                    </fieldset>)}
                 </form>
             </div>
         </div>
