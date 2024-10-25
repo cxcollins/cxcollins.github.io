@@ -6,7 +6,7 @@ app.use(express.json())
 
 app.post('/flight-checker', (req, res) => {
     createFlight(
-        req.body.price_paid,
+        req.body.pricePaid,
         req.body.departureDate,
         req.body.departureTime,
         req.body.departureMeridiem,
@@ -32,4 +32,10 @@ app.post('/flight-checker', (req, res) => {
     })
 })
 
-module.exports = app
+// Everything below here will have to be updated once uploaded to Vercel
+
+export default app
+
+app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`);
+});

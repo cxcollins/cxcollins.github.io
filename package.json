@@ -3,8 +3,10 @@
   "homepage": "https://cxcollins.github.io",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongoose": "^8.7.1",
     "postcss-loader": "^7.0.2",

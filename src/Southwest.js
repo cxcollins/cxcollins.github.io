@@ -1,26 +1,38 @@
 import { useState, useEffect } from 'react'
+import './Southwest.css'
 
 export default function Southwest() {
 
+    const [pricePaid, setPricePaid] = useState('')
+    const [departureDate, setDepartureDate] = useState('')
     const [departureTime, setDepartureTime] = useState('')
     const [departureMeridiem, setDepartureMeridiem] = useState('')
     const [arrivalTime, setArrivalTime] = useState('')
-    const [arrivalTimeMeridiem, setArrivalTimeMeridiem] = useState('')
+    const [arrivalMeridiem, setArrivalMeridiem] = useState('')
     const [departureAirport, setDepartureAirport] = useState('')
     const [arrivalAirport, setArrivalAirport] = useState('')
-    const [ticketClass, setTicketClass] = useState('wga')
+    // const [ticketClass, setTicketClass] = useState('wga')
+    const [returnDate, setReturnDate] = useState('')
     const [returnDepartureTime, setReturnDepartureTime] = useState('')
     const [returnDepartureMeridiem, setReturnDepartureMeridiem] = useState('')
     const [returnArrivalTime, setReturnArrivalTime] = useState('')
-    const [returnArrivalTimeMeridiem, setReturnArrivalTimeMeridiem] = useState('')
-    const [returnTicketClass, setReturnTicketClass] = useState('wga')
+    const [returnArrivalMeridiem, setReturnArrivalMeridiem] = useState('')
+    // const [returnTicketClass, setReturnTicketClass] = useState('wga')
     const [roundtrip, setRoundtrip] = useState('oneway')
+    const [email, setEmail] = useState('')
 
     const handleRadioChange = (e) => {
         setRoundtrip(e.target.value)
     }
 
     const handleChange = ( {target: t} ) => {
+
+        if(t.id === 'pricePaid') {
+            setPricePaid(t.value)
+        }
+        if(t.id === 'departureDate') {
+            setDepartureDate(t.value)
+        }
         if(t.id === 'departureTime') {
             setDepartureTime(t.value)
         }
@@ -30,8 +42,8 @@ export default function Southwest() {
         if(t.id === 'arrivalTime') {
             setArrivalTime(t.value)
         }
-        if(t.id === 'arrivalTimeMeridiem') {
-            setArrivalTimeMeridiem(t.value)
+        if(t.id === 'arrivalMeridiem') {
+            setArrivalMeridiem(t.value)
         }
         if(t.id === 'departureAirport') {
             setDepartureAirport(t.value)
@@ -39,8 +51,11 @@ export default function Southwest() {
         if(t.id === 'arrivalAirport') {
             setArrivalAirport(t.value)
         }
-        if(t.id === 'ticketClass') {
-            setTicketClass(t.value)
+        // if(t.id === 'ticketClass') {
+        //     setTicketClass(t.value)
+        // }
+        if(t.id === 'returnDate') {
+            setReturnDate(t.value)
         }
         if(t.id === 'returnDepartureTime') {
             setReturnDepartureTime(t.value)
@@ -51,43 +66,72 @@ export default function Southwest() {
         if(t.id === 'returnArrivalTime') {
             setReturnArrivalTime(t.value)
         }
-        if(t.id === 'returnArrivalTimeMeridiem') {
-            setReturnArrivalTimeMeridiem(t.value)
+        if(t.id === 'returnArrivalMeridiem') {
+            setReturnArrivalMeridiem(t.value)
         }
-        if(t.id === 'returnTicketClass') {
-            setReturnTicketClass(t.value)
+        if(t.id === 'email') {
+            setEmail(t.value)
+        }
+        // if(t.id === 'returnTicketClass') {
+        //     setReturnTicketClass(t.value)
+        // }
+    }
+
+    const addFlight = async() => {
+        const newFlight = { pricePaid, departureDate, departureTime, departureMeridiem, arrivalTime, arrivalMeridiem, departureAirport, arrivalAirport, roundtrip, returnDate, returnDepartureTime, returnDepartureMeridiem, returnArrivalTime, returnArrivalMeridiem, email }
+        const response = await fetch('/flight-checker', {
+            method: 'post',
+            body: JSON.stringify(newFlight),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if(response.status === 201){
+            alert('Success, now delete this alert')
+        }
+        else {
+            alert('no bueno')
         }
     }
 
     // Need to add submit event
-    // Need to create mongo backend
     return (
         <div className='Page-container'>
             <h1 className='Southwest-h1'>Southwest Price Change Alert</h1>
             <p>Enter your flight info to be alerted if your flight drops below what you paid for it. Since Southwest will allow you to rebook and pocket the difference, it is worth checking everyday for a change in price.</p>
-            <p>This script runs twice a day (at noon and midnight), and will send an email alert if there is a change.</p>
+            <p>This script runs twice a day (at noon and midnight), and will send an email alert if there is a change. Note that only 'Wanna get away' tickets are supported.</p>
             <div className='Southwest-container' id='Southwest-container'>
                 {/* Add on submit function */}
-                <form id='form'>
-                    <label htmlFor='departureTime'>Departure time: </label>
-                    <input id='departureTime' placeholder='HH:MM' type='text' value={departureTime} onChange={handleChange} required></input>
-                    <label htmlFor='departureMeridiem'>AM/PM: </label>
-                    <input id='departureMeridiem' placeholder='AM or PM' type='text' value={departureMeridiem} onChange={handleChange} required></input>
-                    <label htmlFor='arrivalTime'>Arrival time: </label>
-                    <input id='arrivalTime' placeholder='HH:MM' type='text' value={arrivalTime} onChange={handleChange} required></input>
-                    <label htmlFor='arrivalTimeMeridiem'>AM/PM: </label>
-                    <input id='arrivalTimeMeridiem' placeholder='HH:MM' type='text' value={arrivalTimeMeridiem} onChange={handleChange} required></input>
-                    <label htmlFor='departureAirport'>Departure airport code: </label>
-                    <input id='departureAirport' placeholder='SFO' type='text' value={departureAirport} onChange={handleChange} required></input>
-                    <label htmlFor='arrivalAirport'>Arrival airport code: </label>
-                    <input id='arrivalAirport' placeholder='BOS' type='text' value={arrivalAirport} onChange={handleChange} required></input>
-                    <label htmlFor='ticketClass'>Ticket class: </label>
-                    <select id='ticketClass' value={ticketClass} onChange={handleChange} required>
-                        <option value='bs'>Business select</option>
-                        <option value='anytime'>Anytime</option>
-                        <option value='wgap'>Wanna get away plus</option>
-                        <option value='wga' default>Wanna get away</option>
-                    </select>
+                <form id='form' onSubmit={(e) => { e.preventDefault()}}>
+                    <label htmlFor='pricePaid'>How much did you pay for your flight?</label>
+                    <input id='pricePaid' type='number' value={pricePaid} onChange={handleChange} required></input>
+                    <fieldset id='departureDetails'>
+                        <legend>
+                            Departure details
+                        </legend>
+                        <label htmlFor='departureDate'>Departure date:</label>
+                        <input id='departureDate' placeholder='1/1/24' type='date' value={departureDate} onChange={handleChange} required></input>
+                        <label htmlFor='departureTime'>Departure time: </label>
+                        <input id='departureTime' placeholder='HH:MM' type='text' value={departureTime} onChange={handleChange} required></input>
+                        <label htmlFor='departureMeridiem'>AM/PM: </label>
+                        <input id='departureMeridiem' placeholder='AM or PM' type='text' value={departureMeridiem} onChange={handleChange} required></input>
+                        <label htmlFor='arrivalTime'>Arrival time: </label>
+                        <input id='arrivalTime' placeholder='HH:MM' type='text' value={arrivalTime} onChange={handleChange} required></input>
+                        <label htmlFor='arrivalMeridiem'>AM/PM: </label>
+                        <input id='arrivalMeridiem' placeholder='AM or PM' type='text' value={arrivalMeridiem} onChange={handleChange} required></input>
+                        <label htmlFor='departureAirport'>Departure airport code: </label>
+                        <input id='departureAirport' placeholder='SFO' type='text' value={departureAirport} onChange={handleChange} required></input>
+                        <label htmlFor='arrivalAirport'>Arrival airport code: </label>
+                        <input id='arrivalAirport' placeholder='BOS' type='text' value={arrivalAirport} onChange={handleChange} required></input>
+                        {/* <label htmlFor='ticketClass'>Ticket class: </label>
+                        <select id='ticketClass' value={ticketClass} onChange={handleChange} required>
+                            <option value='bs'>Business select</option>
+                            <option value='anytime'>Anytime</option>
+                            <option value='wgap'>Wanna get away plus</option>
+                            <option value='wga' default>Wanna get away</option>
+                        </select> */}
+                    </fieldset>
                     <fieldset>
                         <legend>
                             Roundtrip?
@@ -103,24 +147,28 @@ export default function Southwest() {
 
                     {roundtrip === 'roundtrip' && (<fieldset id='roundtripDetails'>
                         <legend>Return flight details</legend>
-
+                        <label htmlFor='returnDate'>Departure date:</label>
+                        <input id='returnDate' placeholder='1/8/24' type='date' value={returnDate} onChange={handleChange} required></input>
                         <label htmlFor='returnDepartureTime'>Departure time: </label>
                         <input id='returnDepartureTime' placeholder='HH:MM' type='text' value={returnDepartureTime} onChange={handleChange} required></input>
                         <label htmlFor='returnDepartureMeridiem'>AM/PM: </label>
                         <input id='returnDepartureMeridiem' placeholder='AM or PM' type='text' value={returnDepartureMeridiem} onChange={handleChange} required></input>
                         <label htmlFor='returnArrivalTime'>Arrival time: </label>
                         <input id='returnArrivalTime' placeholder='HH:MM' type='text' value={returnArrivalTime} onChange={handleChange} required></input>
-                        <label htmlFor='returnArrivalTimeMeridiem'>AM/PM: </label>
-                        <input id='returnArrivalTimeMeridiem' placeholder='HH:MM' type='text' value={returnArrivalTimeMeridiem} onChange={handleChange} required></input>
-                        <label htmlFor='ticketClass'>Ticket class: </label>
-                        <select id='returnTicketClass' value={returnTicketClass} onChange={handleChange} required>
+                        <label htmlFor='returnArrivalMeridiem'>AM/PM: </label>
+                        <input id='returnArrivalMeridiem' placeholder='HH:MM' type='text' value={returnArrivalMeridiem} onChange={handleChange} required></input>
+                        {/* <label htmlFor='ticketClass'>Ticket class: </label> */}
+                        {/* <select id='returnTicketClass' value={returnTicketClass} onChange={handleChange} required>
                             <option value='bs'>Business select</option>
                             <option value='anytime'>Anytime</option>
                             <option value='wgap'>Wanna get away plus</option>
                             <option value='wga' default>Wanna get away</option>
-                        </select>
+                        </select> */}
                     </fieldset>)}
-                </form>
+                    <label htmlFor='email'>What email would you like to be contacted at?</label>
+                    <input id='email' placeholder='username@example.com' type='email' value={email} onChange={handleChange} required></input>
+                    <button type="submit" onClick={addFlight}>Submit</button>
+                    </form>
             </div>
         </div>
     )

@@ -1,15 +1,19 @@
 import mongoose from 'mongoose'
 import 'dotenv/config'
 
+console.log('MONGODB_CONNECT_STRING:', process.env.MONGODB_CONNECT_STRING);
+
 mongoose.connect(
     process.env.MONGODB_CONNECT_STRING,
     { useNewUrlParser: true }
 )
 
+//create package.json file
+
 const db = mongoose.connection
 
 const flightSchema = mongoose.Schema({
-    price_paid:                 { type: Number, required: true },
+    pricePaid:                 { type: Number, required: true },
     departureDate:              { type: String, required: true },
     departureTime:              { type: String, required: true },
     departureMeridiem:          { type: String, required: true },
@@ -17,21 +21,21 @@ const flightSchema = mongoose.Schema({
     arrivalMeridiem:            { type: String, required: true },
     departureAirport:           { type: String, required: true },
     arrivalAirport:             { type: String, required: true },
-    roundtrip:                  { type: Boolean, required: true},
-    returnDate:                 { type: string },
-    returnDepartureTime:        { type: string },
-    returnDepartureMeridiem:    { type: string },
-    returnArrivalTime:          { type: string },
-    returnArrivalMeridiem:      { type: string },
-    email:                      { type: string, required: true },
+    roundtrip:                  { type: String, required: true},
+    returnDate:                 { type: String },
+    returnDepartureTime:        { type: String },
+    returnDepartureMeridiem:    { type: String },
+    returnArrivalTime:          { type: String },
+    returnArrivalMeridiem:      { type: String },
+    email:                      { type: String, required: true },
 })
 
 const flights = mongoose.model('Flights', flightSchema)
 
 // Create method
-export default async function createFlight(price_paid, departureDate, departureTime, departureMeridiem, arrivalTime, arrivalMeridiem, departureAirport, arrivalAirport, roundtrip, returnDate, returnDepartureTime, returnDepartureMeridiem, returnArrivalTime, returnArrivalMeridiem, email) => {
+export default async function createFlight(pricePaid, departureDate, departureTime, departureMeridiem, arrivalTime, arrivalMeridiem, departureAirport, arrivalAirport, roundtrip, returnDate, returnDepartureTime, returnDepartureMeridiem, returnArrivalTime, returnArrivalMeridiem, email) {
     const flight = new flights({
-    price_paid: price_paid,
+    pricePaid: pricePaid,
     departureDate: departureDate,
     departureTime: departureTime,
     departureMeridiem: departureMeridiem,
