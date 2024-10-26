@@ -1,8 +1,7 @@
 import './Contact.css'
 import { useState, useEffect } from 'react'
 import { sendForm } from '@emailjs/browser'
-import 'dotenv/config'
-
+// import 'dotenv/config'
 
 export default function Contact() {
     useEffect(() => {
@@ -30,9 +29,9 @@ export default function Contact() {
         }
     }
 
-    const service_id = process.env.SERVICE_ID
-    const template_id = process.env.TEMPLATE_ID
-    const public_key = process.env.PUBLIC_KEY
+    const service_id = process.env.REACT_APP_SERVICE_ID
+    const template_id = process.env.REACT_APP_TEMPLATE_ID
+    const public_key = process.env.REACT_APP_PUBLIC_KEY
 
     const sendEmail = (e) => {
         e.preventDefault()

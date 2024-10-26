@@ -22,10 +22,16 @@ export default function Home() {
                     of mine include algorithm development, efficient system infrastructure, and optimizing the user 
                     experience.
 
+                    <br></br>
+                    <br></br>
+
                     I have a previous degree in Finance from Santa Clara University, and currently am a senior
                     technology consultant at KPMG within the cybersecurity and technology risk practice. I have
                     professional experience in large scale data engineering, cybersecurity best practices, and 
                     IT control design.
+
+                    <br></br>
+                    <br></br>
 
                     For more in depth information about my skills and experience, please visit the Projects or Resume 
                     page of this site.
