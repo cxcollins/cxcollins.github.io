@@ -3,10 +3,10 @@ import './Resume.css'
 import { useEffect } from 'react'
 
 export default function Resume() {
-    useEffect(() => {
-        document.getElementById('Resume-h1').classList.add('animation')
-        document.getElementById('Resume-div').classList.add('animation')
-    })
+    // useEffect(() => {
+    //     document.getElementById('Resume-h1').classList.add('animation')
+    //     document.getElementById('Resume-div').classList.add('animation')
+    // })
     return (
         <div>
             <div className='Resume-container'>

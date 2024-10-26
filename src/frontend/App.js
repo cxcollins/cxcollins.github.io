@@ -1,10 +1,10 @@
 import './App.css'
 import NavBar  from './NavBar'
-import Home from './Home'
+import Home from '../Home'
 import Contact from './Contact'
 import Resume from './Resume'
 import Projects from './Projects'
-import Southwest from './Southwest'
+import Southwest from '../Southwest'
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {

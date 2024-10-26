@@ -4,11 +4,11 @@ import thesis_ss from './thesis_ss.png'
 import { useEffect } from 'react'
 
 export default function Projects() {
-    useEffect(() => {
-        document.getElementById('Projects-container').classList.add('animation')
-        document.getElementById('Projects-h2').classList.add('animation')
-        document.getElementById('Rest-page').classList.add('animation')
-    }, [])
+    // useEffect(() => {
+    //     document.getElementById('Projects-container').classList.add('animation')
+    //     document.getElementById('Projects-h2').classList.add('animation')
+    //     document.getElementById('Rest-page').classList.add('animation')
+    // }, [])
 
     return (
         <div className="Projects-page-container">
