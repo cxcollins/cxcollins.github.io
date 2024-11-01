@@ -1,4 +1,4 @@
-.Resume-container {
+.resumeContainer {
     display: flex;
     flex-direction: column;
     background-color: rgba(218, 218, 218, 0.378);
@@ -13,7 +13,7 @@ div {
     text-align: center;
 }
 
-.iframe-container {
+.iframeContainer {
     width: 500px;
     margin: auto;
     height: 700px;
@@ -26,7 +26,7 @@ div {
     height: 100%;
 }
 
-.Resume-h1 {
+.resumeH1 {
     background-color: rgb(173, 173, 173);
     width: 100%;
     font-size: 50px;
@@ -35,28 +35,12 @@ div {
     padding: 25px 0px;
 }
 
-.Resume-a {
+.resumeA{
     text-decoration: none;
     color: black;
 }
 
-.Resume-a:hover{
+.resumeA:hover{
     text-decoration: underline;
     color: rgb(23, 23, 115);
-}
-
-.animation {
-    animation: fall-down 2s;
-}
-
-@keyframes fall-down {
-    from {
-        transform: translateY(-100%);
-    }
-    50% {
-        transform: translateY(50px);
-    }
-    to {
-        transform: translateY(0);
-    }
 }

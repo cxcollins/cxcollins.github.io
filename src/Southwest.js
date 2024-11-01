@@ -11,13 +11,11 @@ export default function Southwest() {
     const [arrivalMeridiem, setArrivalMeridiem] = useState('')
     const [departureAirport, setDepartureAirport] = useState('')
     const [arrivalAirport, setArrivalAirport] = useState('')
-    // const [ticketClass, setTicketClass] = useState('wga')
     const [returnDate, setReturnDate] = useState('')
     const [returnDepartureTime, setReturnDepartureTime] = useState('')
     const [returnDepartureMeridiem, setReturnDepartureMeridiem] = useState('')
     const [returnArrivalTime, setReturnArrivalTime] = useState('')
     const [returnArrivalMeridiem, setReturnArrivalMeridiem] = useState('')
-    // const [returnTicketClass, setReturnTicketClass] = useState('wga')
     const [roundtrip, setRoundtrip] = useState('oneway')
     const [email, setEmail] = useState('')
 
@@ -51,9 +49,6 @@ export default function Southwest() {
         if(t.id === 'arrivalAirport') {
             setArrivalAirport(t.value)
         }
-        // if(t.id === 'ticketClass') {
-        //     setTicketClass(t.value)
-        // }
         if(t.id === 'returnDate') {
             setReturnDate(t.value)
         }
@@ -72,9 +67,6 @@ export default function Southwest() {
         if(t.id === 'email') {
             setEmail(t.value)
         }
-        // if(t.id === 'returnTicketClass') {
-        //     setReturnTicketClass(t.value)
-        // }
     }
 
     const addFlight = async() => {
@@ -86,13 +78,6 @@ export default function Southwest() {
                 'Content-Type': 'application/json'
             }
         })
-
-        if(response.status === 201){
-            alert('Success, now delete this alert')
-        }
-        else {
-            alert('no bueno')
-        }
     }
 
     // Need to add submit event
@@ -104,7 +89,7 @@ export default function Southwest() {
             <div className='Southwest-container' id='Southwest-container'>
                 {/* Add on submit function */}
                 <form id='form' onSubmit={(e) => { e.preventDefault()}}>
-                    <label htmlFor='pricePaid'>How much did you pay for your flight?</label>
+                    <label htmlFor='pricePaid'>How much did you pay for your flight? </label>
                     <input id='pricePaid' type='number' value={pricePaid} onChange={handleChange} required></input>
                     <fieldset id='departureDetails'>
                         <legend>
@@ -124,25 +109,12 @@ export default function Southwest() {
                         <input id='departureAirport' placeholder='SFO' type='text' value={departureAirport} onChange={handleChange} required></input>
                         <label htmlFor='arrivalAirport'>Arrival airport code: </label>
                         <input id='arrivalAirport' placeholder='BOS' type='text' value={arrivalAirport} onChange={handleChange} required></input>
-                        {/* <label htmlFor='ticketClass'>Ticket class: </label>
-                        <select id='ticketClass' value={ticketClass} onChange={handleChange} required>
-                            <option value='bs'>Business select</option>
-                            <option value='anytime'>Anytime</option>
-                            <option value='wgap'>Wanna get away plus</option>
-                            <option value='wga' default>Wanna get away</option>
-                        </select> */}
-                    </fieldset>
-                    <fieldset>
-                        <legend>
-                            Roundtrip?
-                        </legend>
-                    <label htmlFor='roundtrip'>Roundtrip
-                        <input type='radio' id='roundtrip' name='roundtrip' value='roundtrip' checked={roundtrip === 'roundtrip'} onChange={handleRadioChange} />
-                    </label>
-                    <label htmlFor='oneway'>Oneway
-                        <input type='radio' id='oneway' name='roundtrip' value='oneway' checked={roundtrip === 'oneway'} onChange={handleRadioChange}/>
-                    </label>
-                    <button type='submit'>Submit</button>
+                        <label htmlFor='roundtrip'>Roundtrip
+                            <input type='radio' id='roundtrip' name='roundtrip' value='roundtrip' checked={roundtrip === 'roundtrip'} onChange={handleRadioChange} />
+                        </label>
+                        <label htmlFor='oneway'>Oneway
+                            <input type='radio' id='oneway' name='roundtrip' value='oneway' checked={roundtrip === 'oneway'} onChange={handleRadioChange}/>
+                        </label>
                     </fieldset>
 
                     {roundtrip === 'roundtrip' && (<fieldset id='roundtripDetails'>
@@ -157,16 +129,10 @@ export default function Southwest() {
                         <input id='returnArrivalTime' placeholder='HH:MM' type='text' value={returnArrivalTime} onChange={handleChange} required></input>
                         <label htmlFor='returnArrivalMeridiem'>AM/PM: </label>
                         <input id='returnArrivalMeridiem' placeholder='HH:MM' type='text' value={returnArrivalMeridiem} onChange={handleChange} required></input>
-                        {/* <label htmlFor='ticketClass'>Ticket class: </label> */}
-                        {/* <select id='returnTicketClass' value={returnTicketClass} onChange={handleChange} required>
-                            <option value='bs'>Business select</option>
-                            <option value='anytime'>Anytime</option>
-                            <option value='wgap'>Wanna get away plus</option>
-                            <option value='wga' default>Wanna get away</option>
-                        </select> */}
                     </fieldset>)}
-                    <label htmlFor='email'>What email would you like to be contacted at?</label>
-                    <input id='email' placeholder='username@example.com' type='email' value={email} onChange={handleChange} required></input>
+
+                    <label htmlFor='email'>What email would you like to be contacted at? </label>
+                    <input id='email' placeholder='username@example.com' type='email' value={email} onChange={handleChange} className='spaced' required></input>
                     <button type="submit" onClick={addFlight}>Submit</button>
                     </form>
             </div>

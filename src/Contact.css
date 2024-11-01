@@ -1,4 +1,4 @@
-.Page-container {
+.pageContainer {
     height: 95vh;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-.Contact-container {
+.contactContainer {
     text-align: center;
     background-color: white;
     padding: 20px;
@@ -17,7 +17,7 @@
     box-shadow: 5px 5px 10px rgb(60, 59, 59);
 }
 
-.Contact-h1 {
+.contactH1 {
     margin: 0px 0px 15px 0px;
     padding: 25px;
     font-size: 50px;
@@ -25,7 +25,7 @@
     background-color: rgb(173, 173, 173);
 }
 
-.Form {
+.form {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -58,4 +58,3 @@ input, textarea {
         transform: translateY(0);
     }
 }
-

@@ -1,7 +1,6 @@
 import './Contact.css'
 import { useState, useEffect } from 'react'
 import { sendForm } from '@emailjs/browser'
-// import 'dotenv/config'
 
 export default function Contact() {
     useEffect(() => {
@@ -51,10 +50,10 @@ export default function Contact() {
       }
 
     return (
-        <div className='Page-container'>
-            <h1 className='Contact-h1'>Contact me!</h1>
-            <div className='Contact-container' id='Contact-container'>
-                <form id='form' onSubmit={sendEmail} className='Form'>
+        <div className='pageContainer'>
+            <h1 className='contactH1'>Contact me!</h1>
+            <div className='contactContainer' id='contactContainer'>
+                <form id='form' onSubmit={sendEmail} className='form'>
                         <label htmlFor='name'>Name: </label>
                         <input id='name' placeholder='required' type='text' value={name} name='name' onChange={handleChange} required></input>
                         <label htmlFor='email'>Email: </label>
