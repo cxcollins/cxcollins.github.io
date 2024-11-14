@@ -2,6 +2,8 @@
 
 from bs4 import BeautifulSoup
 
+from http.server import BaseHTTPRequestHandler
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -163,11 +165,21 @@ def send_email(flight):
     finally:
         smtp_server.quit()
 
-for flight in mongo_flights:
+def main(request):
 
-    new_price = check_flight(flight)
+    for flight in mongo_flights:
 
-    if new_price < flight['pricePaid']:
-        send_email(flight)
+        new_price = check_flight(flight)
 
-driver.quit()
+        if new_price < flight['pricePaid']:
+            send_email(flight)
+
+    return {
+        "statusCode": 200,
+        "body": "Cron job executed successfully"
+    }
+
+    driver.quit()
+
+if __name__ == '__main__':
+    main(None)
