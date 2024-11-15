@@ -4,7 +4,7 @@ import { sendForm } from '@emailjs/browser'
 
 export default function Contact() {
     useEffect(() => {
-        document.getElementById('Contact-container').classList.add('animation')
+        document.getElementById('contactContainer').classList.add('animation')
     }, [])
 
     const [name, setName] = useState('')
