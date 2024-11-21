@@ -3,7 +3,8 @@
   background-color: white;
   overflow: auto;
   min-height: 100vh;
-  font-family: 'Helvetica';
+  /* font-family: 'Helvetica'; */
+  font-family: 'Sans Serif';
 }
 
 .App-logo {
@@ -24,4 +25,8 @@
 
 .App-link {
   color: #61dafb;
+}
+
+p {
+  color: black;
 }

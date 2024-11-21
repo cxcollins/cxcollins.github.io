@@ -29,18 +29,19 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
-    font-family: 'Helvetica';
+    font-family: 'Sans Serif';
 }
 
 label {
     text-align: left;
 }
 
-input, textarea {
+.form input, .form textarea {
     margin-bottom: 10px;
     font-family: inherit;
     border-style: inset;
     border-width: 1px;
+    width: 95%;
 }
 
 .animation {

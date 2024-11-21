@@ -4,7 +4,9 @@
     margin: auto;
     overflow: auto;
     min-height: 95vh;
-    font-family: 'Helvetica', 'Verdana';
+    font-family: 'Sans Serif';
+    font-size: 20px;
+    /* font-family: 'Helvetica', 'Verdana'; */
 }
 
 .homeH1 {
@@ -19,4 +21,8 @@
     width: 50%;
     text-align: left;
     margin: auto;
+}
+
+p {
+    color: black;
 }
