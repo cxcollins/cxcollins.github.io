@@ -1,6 +1,8 @@
 import './Projects.css'
 import football from './football.png'
 import thesis_ss from './thesis_ss.png'
+import garden from './garden.jpg'
+import workout from './workout.jpg'
 
 export default function Projects() {
     return (
@@ -14,6 +16,24 @@ export default function Projects() {
                     <p>Finding Wisdom in the Crowd: How Stock Market Returns can be Effectively Predicted Using 
                     Twitter Sentiment and Past Return Data</p>
                     <img src={thesis_ss}></img>
+                </div>
+                <div className="thesisContainer">
+                    <a href='https://github.com/cxcollins/garden-simulator'>
+                    <h2>Garden Simulation</h2>
+                    </a>
+                    <p>Gardening game built using JFrame that prompts the user to monitor relationships between plant growth,
+                        pest management, and soil health
+                    </p>
+                    <img src={garden}></img>
+                </div>
+                <div className="thesisContainer">
+                    <a href='https://github.com/cxcollins/workout_tracker_webapp'>
+                    <h2>Workout Tracker Web App</h2>
+                    </a>
+                    <p>Web application that allows users to log in with their name, upload workout information, and save their history.
+                        Currently under development, future features to include finding other users and trend analysis.
+                    </p>
+                    <img src={workout}></img>
                 </div>
                 <div className="scraperContainer">
                     <a href='https://github.com/cxcollins/fantasy_football_scraper'>

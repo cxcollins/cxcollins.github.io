@@ -6,7 +6,6 @@
     min-height: 95vh;
     font-family: 'Sans Serif';
     font-size: 20px;
-    /* font-family: 'Helvetica', 'Verdana'; */
 }
 
 .homeH1 {
@@ -14,7 +13,8 @@
     padding: 25px;
     font-size: 50px;
     font-weight: 500;
-    background-color: rgb(173, 173, 173);
+    background-color: rgba(173, 173, 173, 0.75);
+    border-radius: 6px;
 }
 
 .homeDiv {

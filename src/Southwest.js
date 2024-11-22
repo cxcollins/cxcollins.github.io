@@ -83,6 +83,7 @@ export default function Southwest() {
 
     // Need to add submit event
     return (
+        <div className='outerPageContainer'>
         <div className='Page-container'>
             <h1 className='Southwest-h1'>Southwest Price Change Alert</h1>
             <p>Enter your flight info to be alerted if your flight drops below what you paid for it. Since Southwest will allow you to rebook and pocket the difference, it is worth checking everyday for a change in price.</p>
@@ -164,6 +165,7 @@ export default function Southwest() {
                     </div>
                     </form>
             </div>
+        </div>
         </div>
     )
 }
