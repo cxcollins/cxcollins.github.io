@@ -1,7 +1,7 @@
 import './Projects.css'
 import football from './football.png'
 import thesis_ss from './thesis_ss.png'
-import garden from './garden.jpg'
+import ollama from './ollama.jpg'
 import workout from './workout.jpg'
 
 export default function Projects() {
@@ -19,12 +19,13 @@ export default function Projects() {
                 </div>
                 <div className="thesisContainer">
                     <a href='https://github.com/cxcollins/garden-simulator'>
-                    <h2>Garden Simulation</h2>
+                    <h2>Browser History Summarizer</h2>
                     </a>
-                    <p>Gardening game built using JFrame that prompts the user to monitor relationships between plant growth,
-                        pest management, and soil health
+                    <p>Scalable distributed system to process and summarize user browser history with locally power LLM, 
+                        orchestrating multiple containerized workers via RabbitMQ for fault-tolerant message queuing and 
+                        horizontal parallelism
                     </p>
-                    <img src={garden}></img>
+                    <img src={ollama}></img>
                 </div>
                 <div className="thesisContainer">
                     <a href='https://github.com/cxcollins/workout_tracker_webapp'>

@@ -1,4 +1,4 @@
-import resume from './resume.pdf'
+import resume from './Connor_Collins_resume.pdf'
 import './Resume.css'
 
 export default function Resume() {

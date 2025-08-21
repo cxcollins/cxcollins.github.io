@@ -12,10 +12,10 @@ export default function Home() {
                 <br />
                     Thanks for visiting my website!
 
-                    I am a student at Oregon State University, completing a bachelor's degree in computer science. I am currently 
-                    seeking a software engineering internship for summer 2025 in the San Francisco Bay Area. Special interests
-                    of mine include algorithm development, efficient system infrastructure, and optimizing the user 
-                    experience.
+                    I am a student at Oregon State University completing a bachelor's degree in computer science. I am currently 
+                    seeking a software engineering internship for Winter/Spring/Summer 2026, ideally in the San Francisco Bay Area but
+                    open to any location. Special interests of mine include algorithm development, distributed system infrastructure, and
+                    optimizing the user experience.
 
                     <br></br>
                     <br></br>
@@ -28,7 +28,7 @@ export default function Home() {
                     <br></br>
                     <br></br>
 
-                    In my free time, I love to travel and to be outside. I am an avid skier and surfer, and can
+                    In my free time, I love to travel and to be outside. I am an avid skier and surfer and can
                     typically be found in the ocean or on a mountain on the weekends, depending on the season.
 
                     <br></br>
