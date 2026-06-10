@@ -3,6 +3,8 @@ import football from './football.png'
 import thesis_ss from './thesis_ss.png'
 import ollama from './ollama.jpg'
 import workout from './workout.jpg'
+const TERMS_URL = `${process.env.PUBLIC_URL}/terms_of_service.pdf`
+const PRIVACY_URL = `${process.env.PUBLIC_URL}/privacy_policy.pdf`
 
 export default function Projects() {
     return (
@@ -51,6 +53,11 @@ export default function Projects() {
                         https://github.com/cxcollins'>Github</a> or
                         my <a href='https://linkedin.com/in/connorxcollins'>LinkedIn!</a>
                     </p>
+                </div>
+                <div className='legalLinks'>
+                    <a href={TERMS_URL} download="terms_of_service.pdf">Terms of Service</a>
+                    <span className='legalSeparator'>·</span>
+                    <a href={PRIVACY_URL} download="privacy_policy.pdf">Privacy Policy</a>
                 </div>
         </div>
     )
