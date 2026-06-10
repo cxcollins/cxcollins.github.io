@@ -55,9 +55,9 @@ export default function Projects() {
                     </p>
                 </div>
                 <div className='legalLinks'>
-                    <a href={TERMS_URL} download="terms_of_service.pdf">Terms of Service</a>
+                    <a href={TERMS_URL} target="_blank" rel="noopener noreferrer">Terms of Service</a>
                     <span className='legalSeparator'>·</span>
-                    <a href={PRIVACY_URL} download="privacy_policy.pdf">Privacy Policy</a>
+                    <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                 </div>
         </div>
     )
