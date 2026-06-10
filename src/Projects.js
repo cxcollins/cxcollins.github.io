@@ -17,7 +17,7 @@ export default function Projects() {
                     </a>
                     <p>Finding Wisdom in the Crowd: How Stock Market Returns can be Effectively Predicted Using 
                     Twitter Sentiment and Past Return Data</p>
-                    <img src={thesis_ss}></img>
+                    <img src={thesis_ss} alt="Thesis screenshot"></img>
                 </div>
                 <div className="thesisContainer">
                     <a href='https://github.com/cxcollins/garden-simulator'>
@@ -27,7 +27,7 @@ export default function Projects() {
                         orchestrating multiple containerized workers via RabbitMQ for fault-tolerant message queuing and 
                         horizontal parallelism
                     </p>
-                    <img src={ollama}></img>
+                    <img src={ollama} alt="Ollama screenshot"></img>
                 </div>
                 <div className="thesisContainer">
                     <a href='https://github.com/cxcollins/workout_tracker_webapp'>
@@ -36,7 +36,7 @@ export default function Projects() {
                     <p>Web application that allows users to log in with their name, upload workout information, and save their history.
                         Currently under development, future features to include finding other users and trend analysis.
                     </p>
-                    <img src={workout}></img>
+                    <img src={workout} alt="Workout Tracker screenshot"></img>
                 </div>
                 <div className="scraperContainer">
                     <a href='https://github.com/cxcollins/fantasy_football_scraper'>
@@ -44,7 +44,7 @@ export default function Projects() {
                     </a>
                     <p>Simple Chrome add-on that scrapes statistics on any team's defense.
                     Built to avoid multiple tabs when looking at my fantasy team.</p>
-                    <img src={football}></img>
+                    <img src={football} alt="Fantasy Scraper screenshot"></img>
                 </div>
             </div>
                 <div className='restPage' id='restPage'>
