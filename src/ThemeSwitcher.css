@@ -1,0 +1,31 @@
+.themeSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.themeSwitcherLabel {
+    color: var(--text-nav);
+    opacity: 0.6;
+}
+
+.themeSwitcherSelect {
+    background-color: var(--bg-dropdown-hover);
+    color: var(--text-nav);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+[data-theme^='midnight'] .themeSwitcherSelect {
+    border-color: var(--border-accent);
+}
+
+.themeSwitcherSelect:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}

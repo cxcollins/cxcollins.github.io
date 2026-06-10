@@ -1,0 +1,78 @@
+/* Shared modern layout primitives */
+
+.pageShell {
+  width: min(var(--content-max), 92vw);
+  margin: 0 auto;
+  padding: var(--page-padding);
+  min-height: calc(100vh - var(--nav-height));
+  text-align: left;
+}
+
+.pageHero {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 2.25rem 2rem;
+  border-radius: var(--radius-header);
+  background-color: var(--bg-hero);
+  border: 1px solid var(--border);
+  color: var(--text-on-elevated);
+  overflow: hidden;
+}
+
+.pageHero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.pageHero h1,
+.pageHero h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-on-elevated);
+}
+
+.pageHeroEyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+}
+
+.pageHeroSub {
+  margin: 0.75rem 0 0 0;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 36ch;
+}
+
+.pageCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pageCard:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--glow);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-tertiary);
+  margin-bottom: 0.35rem;
+}

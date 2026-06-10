@@ -1,73 +1,95 @@
-.projectsPageContainer {
+.projectsPage {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.projectCard {
+    overflow: hidden;
+}
+
+.projectCard:hover {
+    transform: translateY(-3px);
+}
+
+.projectCardLink {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    background-color: rgba(218, 218, 218, 0.378);
-    overflow-y: auto;
-    min-height: 95vh;
-    margin: auto;
+    height: 100%;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
 }
 
-.projectsContainer {
-    width: 75%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: auto;
-    padding-top: 20px;
+.projectCardLink h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
-.thesisContainer, .scraperContainer {
-    flex-basis: 40%;
-    margin: auto;
+.projectCardLink p {
+    margin: 0 0 1rem 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    flex-grow: 1;
 }
 
-iframe {
-    width: 349px;
-    height: 280px;
+.projectCardLink img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: calc(var(--radius-card) - 4px);
+    border: 1px solid var(--border);
 }
-.restPage {
-    margin: auto;
-    padding: 30px;
-    width: 85%
+
+[data-theme^='midnight'] .projectCardLink img {
+    border-color: var(--border-accent);
+}
+
+.projectCardLink:hover h3 {
+    color: var(--accent-secondary);
+}
+
+.projectsFooter {
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.projectsFooter p {
+    margin: 0 0 1rem 0;
+    color: var(--text-secondary);
 }
 
 .legalLinks {
-    margin: auto auto 30px auto;
-    padding: 0 30px 20px 30px;
-    width: 85%;
-    text-align: center;
     font-size: 0.85em;
-    color: rgba(80, 80, 80, 0.9);
+    color: var(--text-secondary);
 }
 
 .legalLinks a {
-    color: rgba(60, 60, 60, 0.95);
+    color: var(--text-link);
     text-decoration: underline;
 }
 
 .legalLinks a:hover {
-    color: rgba(30, 30, 30, 1);
+    color: var(--text-link-hover);
 }
 
 .legalSeparator {
     margin: 0 10px;
+    color: var(--border-accent);
 }
 
-img {
-    width: 250px;
-    height: 350px;
-}
-
-.projectsContainer h2 {
-    font-size: 1.2em;
-}
-
-.projectsH2 {
-    margin: 0px 0px 15px 0px;
-    padding: 25px;
-    font-size: 50px;
-    font-weight: 500;
-    background-color: rgba(173, 173, 173, 0.75);
-    border-radius: 6px;
+@media (max-width: 768px) {
+    .projectGrid {
+        grid-template-columns: 1fr;
+    }
 }

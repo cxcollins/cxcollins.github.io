@@ -83,9 +83,13 @@ export default function Southwest() {
 
     // Need to add submit event
     return (
-        <div className='outerPageContainer'>
-        <div className='Page-container'>
-            <h1 className='Southwest-h1'>Southwest Price Change Alert</h1>
+        <div className='pageShell southwestPage'>
+        <header className='pageHero'>
+            <span className='pageHeroEyebrow'>Tool</span>
+            <h1>Southwest Price Change Alert</h1>
+            <p className='pageHeroSub'>Get notified when your fare drops below what you paid.</p>
+        </header>
+        <div className='Page-container pageCard'>
             <p>Enter your flight info to be alerted if your flight drops below what you paid for it. Since Southwest will allow you to rebook and pocket the difference, it is worth checking everyday for a change in price.</p>
             <p>This script runs daily at noon, and will send an email alert if there is a change. Note that only 'Wanna get away' tickets are supported.</p>
             <div className='Southwest-container' id='Southwest-container'>

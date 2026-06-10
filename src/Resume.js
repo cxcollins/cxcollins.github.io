@@ -3,15 +3,17 @@ import './Resume.css'
 
 export default function Resume() {
     return (
-        <div>
-            <div className='resumeContainer'>
-                <h2 className='resumeH1' id='resumeH1'>
+        <div className='pageShell resumePage'>
+            <header className='pageHero'>
+                <span className='pageHeroEyebrow'>Experience</span>
+                <h2>
                     <a className='resumeA' href={resume} download>Resume</a>
                 </h2>
-                <div className='iframeContainer' id='resumeDiv'>
-                    <iframe title='documentResume' src={resume} className='iframe' 
-                    type='application/pdf'>Test</iframe>`
-                </div>
+                <p className='pageHeroSub'>Download or view below.</p>
+            </header>
+            <div className='iframeContainer pageCard' id='resumeDiv'>
+                <iframe title='documentResume' src={resume} className='iframe'
+                type='application/pdf'></iframe>
             </div>
         </div>
     )

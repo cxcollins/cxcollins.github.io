@@ -1,15 +1,19 @@
 import './NavBar.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import ThemeSwitcher from './ThemeSwitcher'
+
+const navClass = ({ isActive }) => (isActive ? 'navLink active' : 'navLink')
 
 export default function NavBar() {
     return(
-        <div className='navContainer'>
-            <h2 className='navH2'>Connor Collins</h2>
+        <header className='navContainer'>
+            <Link to='/' className='navBrand'>Connor Collins</Link>
+            <div className='navRight'>
             <nav className='navNav'>
                 <ul className='navUl'>
-                    <li><Link to='/'>Home</Link></li>
+                    <li><NavLink to='/' className={navClass} end>Home</NavLink></li>
                     <li className='dropdown'>
-                        <Link to='/projects'>Projects</Link>
+                        <NavLink to='/projects' className={navClass}>Projects</NavLink>
                         <ul className='dropdownItems'>
                             <li>
                                 <Link to='/flight-checker'>Southwest Flight Price Checker</Link>
@@ -19,10 +23,12 @@ export default function NavBar() {
                             </li>
                         </ul>
                     </li>
-                    <li><Link to='/resume'>Resume</Link></li>
-                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><NavLink to='/resume' className={navClass}>Resume</NavLink></li>
+                    <li><NavLink to='/contact' className={navClass}>Contact</NavLink></li>
                 </ul>
             </nav>
-        </div>
+            <ThemeSwitcher />
+            </div>
+        </header>
     )
 }

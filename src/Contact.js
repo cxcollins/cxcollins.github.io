@@ -50,20 +50,24 @@ export default function Contact() {
       }
 
     return (
-        <div className='pageContainer'>
-            <h1 className='contactH1'>Contact me!</h1>
-            <div className='contactContainer' id='contactContainer'>
+        <div className='pageShell contactPage'>
+            <header className='pageHero'>
+                <span className='pageHeroEyebrow'>Get in touch</span>
+                <h1>Contact me!</h1>
+                <p className='pageHeroSub'>Have a question or opportunity? Send a message below.</p>
+            </header>
+            <div className='contactContainer pageCard' id='contactContainer'>
                 <form id='form' onSubmit={sendEmail} className='form'>
-                        <label htmlFor='name'>Name: </label>
+                        <label htmlFor='name'>Name</label>
                         <input id='name' placeholder='required' type='text' value={name} name='name' onChange={handleChange} required></input>
-                        <label htmlFor='email'>Email: </label>
+                        <label htmlFor='email'>Email</label>
                         <input id='email' type='email' placeholder='required' value={email} name='email' onChange={handleChange} required></input>
-                        <label htmlFor='phone'>Phone number: </label>
+                        <label htmlFor='phone'>Phone number</label>
                         <input id='phone' type='tel' value={phone} name='phone' onChange={handleChange} placeholder='optional'></input>
-                        <label htmlFor='message'>Message: </label>
+                        <label htmlFor='message'>Message</label>
                         <textarea id='message' value={message} name='message' onChange={handleChange} placeholder='required' required></textarea>
-                    <button type='submit'>Submit</button>
-                    {emailed && <p>Thanks for reaching out! I will be in touch with you shortly.</p>}
+                    <button type='submit'>Send message</button>
+                    {emailed && <p className='contactSuccess'>Thanks for reaching out! I will be in touch with you shortly.</p>}
                 </form>
             </div>
         </div>
