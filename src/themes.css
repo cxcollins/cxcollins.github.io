@@ -1,0 +1,40 @@
+/* Aurora — the site's finalized design tokens */
+
+:root {
+  --bg-app: #090d14;
+  --bg-surface: #111827;
+  --bg-elevated: #1a2234;
+  --bg-hero: #1a2234;
+  --bg-nav: #0c1018;
+  --bg-card: #161f2e;
+  --bg-dropdown: #111827;
+  --bg-dropdown-hover: #1e293b;
+  --bg-input: #0f1623;
+
+  --text-primary: #e8edf5;
+  --text-secondary: #94a3b8;
+  --text-nav: #e2e8f0;
+  --text-on-elevated: #f1f5f9;
+  --text-link: #67c8f7;
+  --text-link-hover: #a5e8ff;
+
+  --accent: #8b7cf7;
+  --accent-hover: #a599f9;
+  --accent-secondary: #38bdf8;
+  --accent-tertiary: #4ade80;
+  --accent-contrast: #090d14;
+  --accent-muted: rgba(139, 124, 247, 0.14);
+  --accent-gradient: linear-gradient(120deg, #8b7cf7 0%, #38bdf8 50%, #4ade80 100%);
+
+  --border: #2a3548;
+  --border-accent: rgba(56, 189, 248, 0.5);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --glow: 0 0 24px rgba(56, 189, 248, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --radius-card: 14px;
+  --radius-header: 14px;
+  --radius-input: 6px;
+  --content-max: 1100px;
+  --page-padding: clamp(1rem, 4vw, 2.5rem);
+  --nav-height: 64px;
+}
