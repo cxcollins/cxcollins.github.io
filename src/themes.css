@@ -25,6 +25,8 @@
   --accent-tertiary: #171773;
   --accent-contrast: #ffffff;
   --accent-muted: rgba(255, 255, 255, 0.12);
+  /* Solid fallback — gradient variants override this with a real gradient */
+  --accent-gradient: var(--accent);
 
   --border: #dddddd;
   --border-accent: #cccccc;
@@ -101,7 +103,10 @@
   --glow: 0 4px 20px rgba(193, 127, 58, 0.12);
 }
 
-[data-theme='midnight'] {
+[data-theme='midnight'],
+[data-theme='midnight-aurora'],
+[data-theme='midnight-sunset'],
+[data-theme='midnight-nebula'] {
   --bg-app: #090d14;
   --bg-surface: #111827;
   --bg-elevated: #1a2234;
@@ -205,4 +210,54 @@
 
 html {
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Midnight gradient-accent variants ───────────────────────────────
+   These share the Midnight dark palette (see grouped selector above) and
+   only swap the accent tokens for a gradient. --accent stays a solid color
+   for spots that can't take a gradient (focus rings, link/icon text), while
+   --accent-gradient drives the hero bar, primary buttons, and hero titles. */
+
+[data-theme='midnight-aurora'] {
+  --accent: #8b7cf7;
+  --accent-hover: #a599f9;
+  --accent-secondary: #38bdf8;
+  --accent-tertiary: #4ade80;
+  --accent-gradient: linear-gradient(120deg, #8b7cf7 0%, #38bdf8 50%, #4ade80 100%);
+  --border-accent: rgba(56, 189, 248, 0.5);
+  --glow: 0 0 24px rgba(56, 189, 248, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='midnight-sunset'] {
+  --accent: #fb7185;
+  --accent-hover: #fda4af;
+  --accent-secondary: #f0abfc;
+  --accent-tertiary: #fbbf24;
+  --accent-gradient: linear-gradient(120deg, #fbbf24 0%, #fb7185 50%, #c084fc 100%);
+  --border-accent: rgba(251, 113, 133, 0.5);
+  --glow: 0 0 24px rgba(251, 113, 133, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='midnight-nebula'] {
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-secondary: #c084fc;
+  --accent-tertiary: #f472b6;
+  --accent-gradient: linear-gradient(120deg, #38bdf8 0%, #818cf8 45%, #e879f9 100%);
+  --border-accent: rgba(192, 132, 252, 0.5);
+  --glow: 0 0 24px rgba(192, 132, 252, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Gradient-filled hero titles — only on the gradient variants */
+[data-theme='midnight-aurora'] .pageHero h1,
+[data-theme='midnight-aurora'] .pageHero h2,
+[data-theme='midnight-sunset'] .pageHero h1,
+[data-theme='midnight-sunset'] .pageHero h2,
+[data-theme='midnight-nebula'] .pageHero h1,
+[data-theme='midnight-nebula'] .pageHero h2 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }

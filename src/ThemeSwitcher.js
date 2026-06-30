@@ -18,6 +18,14 @@ const THEME_GROUPS = [
             { id: 'midnight-teal', label: 'Midnight Teal' },
         ],
     },
+    {
+        label: 'Midnight · Gradient',
+        themes: [
+            { id: 'midnight-aurora', label: 'Aurora' },
+            { id: 'midnight-sunset', label: 'Sunset' },
+            { id: 'midnight-nebula', label: 'Nebula' },
+        ],
+    },
 ]
 
 const ALL_THEMES = THEME_GROUPS.flatMap((g) => g.themes)

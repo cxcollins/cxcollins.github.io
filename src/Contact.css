@@ -50,7 +50,7 @@ label {
 
 .form button {
     margin-top: 1rem;
-    background-color: var(--accent);
+    background: var(--accent-gradient);
     color: var(--accent-contrast);
     border: none;
     border-radius: var(--radius-input);

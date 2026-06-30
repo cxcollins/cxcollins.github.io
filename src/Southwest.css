@@ -69,7 +69,7 @@ label {
 }
 
 .swButton {
-    background-color: var(--accent);
+    background: var(--accent-gradient);
     color: var(--accent-contrast);
     padding: 0.7rem 1.4rem;
     border: none;
