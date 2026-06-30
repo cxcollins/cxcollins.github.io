@@ -12,13 +12,9 @@
     min-height: var(--nav-height);
     padding: 0 1.5rem;
     font-family: inherit;
-    border-bottom: 1px solid var(--border);
-    transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-
-[data-theme^='midnight'] .navContainer {
-    border-bottom-color: var(--border-accent);
+    border-bottom: 1px solid var(--border-accent);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .navRight {
@@ -30,13 +26,9 @@
 .navBrand {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-nav);
+    color: var(--accent-secondary);
     text-decoration: none;
     letter-spacing: -0.01em;
-}
-
-[data-theme^='midnight'] .navBrand {
-    color: var(--accent-secondary);
 }
 
 .navNav {
@@ -74,13 +66,6 @@
     opacity: 1;
     color: var(--accent-secondary);
     background-color: var(--accent-muted);
-}
-
-[data-theme='classic'] .navLink.active,
-[data-theme='ocean'] .navLink.active,
-[data-theme='cedar'] .navLink.active {
-    color: var(--text-nav);
-    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .dropdown {

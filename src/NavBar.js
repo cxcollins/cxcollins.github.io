@@ -1,6 +1,5 @@
 import './NavBar.css'
 import { Link, NavLink } from 'react-router-dom'
-import ThemeSwitcher from './ThemeSwitcher'
 
 const navClass = ({ isActive }) => (isActive ? 'navLink active' : 'navLink')
 
@@ -27,7 +26,6 @@ export default function NavBar() {
                     <li><NavLink to='/contact' className={navClass}>Contact</NavLink></li>
                 </ul>
             </nav>
-            <ThemeSwitcher />
             </div>
         </header>
     )

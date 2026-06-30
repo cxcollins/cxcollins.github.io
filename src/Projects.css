@@ -48,11 +48,7 @@
     height: 200px;
     object-fit: cover;
     border-radius: calc(var(--radius-card) - 4px);
-    border: 1px solid var(--border);
-}
-
-[data-theme^='midnight'] .projectCardLink img {
-    border-color: var(--border-accent);
+    border: 1px solid var(--border-accent);
 }
 
 .projectCardLink:hover h3 {
