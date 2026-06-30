@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import DatePicker from 'react-datepicker'
+import { useState } from 'react'
+// import DatePicker from 'react-datepicker'
 import './Southwest.css'
 
 export default function Southwest() {
@@ -79,6 +79,13 @@ export default function Southwest() {
                 'Content-Type': 'application/json'
             }
         })
+        // TODO: Added this for build purposes - test more later
+        if (response.ok) {
+            alert('Flight added successfully')
+        } else {
+            alert('Failed to add flight')
+        }
+    }
     }
 
     // Need to add submit event
