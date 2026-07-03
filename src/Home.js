@@ -8,7 +8,7 @@ export default function Home() {
                 <span className='pageHeroEyebrow'>Portfolio</span>
                 <h1>Welcome!</h1>
                 <p /* className='pageHeroSub' */>
-                    Computer science student · Software engineering & cybersecurity profressional
+                    Computer science student · Software engineering & cybersecurity professional
                 </p>
             </header>
             <div className='homeIntro'>
