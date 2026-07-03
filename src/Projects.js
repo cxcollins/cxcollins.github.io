@@ -70,6 +70,7 @@ export default function Projects() {
                     <span className='legalSeparator'>·</span>
                     <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                 </div>
+            </div>
         </div>
     )
 }
