@@ -18,6 +18,9 @@ export default function NavBar() {
                                 <Link to='/flight-checker'>Southwest Flight Price Checker</Link>
                             </li>
                             <li>
+                                <Link to='/concert-alerts'>Cheap concert alerts</Link>
+                            </li>
+                            <li>
                                 <Link to='/projects'>Other projects</Link>
                             </li>
                         </ul>

@@ -1,0 +1,25 @@
+name: Concert alerts
+
+on:
+  schedule:
+    - cron: '0 16 * * 2,5'
+  workflow_dispatch:
+
+jobs:
+  send-alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+      MONGODB_CONNECT_STRING: ${{ secrets.MONGODB_CONNECT_STRING }}
+      BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+      BROWSERBASE_PROJECT_ID: ${{ secrets.BROWSERBASE_PROJECT_ID }}
+      BROWSERBASE_WHATSAPP_CONTEXT_ID: ${{ secrets.BROWSERBASE_WHATSAPP_CONTEXT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: node backend/jobs/concert-alerts.mjs

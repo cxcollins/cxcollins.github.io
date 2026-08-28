@@ -1,8 +1,18 @@
+import cors from 'cors'
 import express from 'express'
 import createFlight from './flight-model.mjs'
+import { normalizePhone, upsertSubscriber } from './concert-model.mjs'
 
 const app = express()
 app.use(express.json())
+app.use(cors({
+    origin: [
+        'https://connorxcollins.com',
+        'https://www.connorxcollins.com',
+        'http://localhost:3000',
+        'http://localhost:3001',
+    ],
+}))
 
 app.post('/flight-checker', (req, res) => {
     createFlight(
@@ -30,6 +40,33 @@ app.post('/flight-checker', (req, res) => {
         console.error(error)
         res.status(400).json({ Error: 'Couldn\'t add to collection'})
     })
+})
+
+app.post('/concert-alerts', async (req, res) => {
+    try {
+        const name = String(req.body.name || '').trim()
+        const location = String(req.body.location || '').trim()
+        const phone = normalizePhone(req.body.phone)
+        const consent = req.body.consent === true || req.body.consent === 'true'
+
+        if (!name || !location || !phone) {
+            return res.status(400).json({ Error: 'Name, valid WhatsApp phone, and location are required' })
+        }
+        if (!consent) {
+            return res.status(400).json({ Error: 'Consent is required' })
+        }
+
+        const subscriber = await upsertSubscriber({ name, phone, location })
+        res.status(201).json({
+            ok: true,
+            name: subscriber.name,
+            phone: subscriber.phone,
+            location: subscriber.location,
+        })
+    } catch (error) {
+        console.error(error)
+        res.status(400).json({ Error: 'Couldn\'t add subscriber' })
+    }
 })
 
 // Everything below here will have to be updated once uploaded to Vercel
